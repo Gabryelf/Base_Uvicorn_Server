@@ -1,0 +1,11 @@
+project/
+├── main_app.py      # Главное GUI приложение
+├── server.py        # Сервер FastAPI
+├── client.py        # Клиент
+├── setup.py         # Для сборки EXE
+├── requirements.txt
+└── static/
+    ├── index.html
+    ├── page1.html
+    ├── page2.html
+    └── page3.html
