@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAST APP</title>
+</head>
+<body>
+    <h1>Выберите вариант:</h1>
+
+    <button onclick="selectOption(1)">Вариант 1</button>
+    <button onclick="selectOption(2)">Вариант 2</button>
+    <button onclick="selectOption(3)">Вариант 3</button>
+
+    <script>
+        async function selectOption(option) {
+            const response = await fetch('/api/select', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ option: option })
+            });
+
+            const data = await response.json();
+            window.location.href = data.redirect_url;
+        }
+    </script>
+</body>
+</html>
